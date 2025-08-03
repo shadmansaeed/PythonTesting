@@ -55,5 +55,9 @@ wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, ".p
 
 print(driver.find_element(By.CLASS_NAME, "promoInfo").text) # print promoinfo
 
-discountedAmount= int(driver.find_element(By.CSS_SELECTOR, ".discountAmt").text)  #display discounted amount
-#assert
+discountedAmount= float(driver.find_element(By.CSS_SELECTOR, ".discountAmt").text)  #display discounted amount
+
+assert totalAmount > discountedAmount # if discounted amount is greater than totalamount, then
+
+# total after discount+ amount in same line
+print(driver.find_element(By.XPATH, "//b[.='Total After Discount : ']").text + " " + driver.find_element(By.CSS_SELECTOR, ".discountAmt").text)
