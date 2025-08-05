@@ -14,6 +14,12 @@ driver.find_element(By.LINK_TEXT, "Click Here").click()
 
 windowsOpen = driver.window_handles
 
-driver.switch_to.window(windowsOpen[1])
+driver.switch_to.window(windowsOpen[1])  # switch to child window
 print(driver.find_element(By.TAG_NAME, "h3").text)
+time.sleep(2)
+driver.close()  # close child window
+
+driver.switch_to.window(windowsOpen[0])   # switch to parent window
+
+assert "Opening a new window" == driver.find_element(By.TAG_NAME, "h3").text
 time.sleep(5)
