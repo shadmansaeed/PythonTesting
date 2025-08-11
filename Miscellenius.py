@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 chrome_options = webdriver.ChromeOptions
 
+
 # if certificate error shows
 chrome_options.add_argument("--ignore-certificate-errors")
 # chrome driver service
