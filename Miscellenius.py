@@ -7,7 +7,7 @@ chrome_options = webdriver.ChromeOptions
 
 
 # if certificate error shows
-chrome_options.add_argument("--ignore-certificate-errors")
+#chrome_options.add_argument("--ignore-certificate-errors")
 # chrome driver service
 driver = webdriver.Chrome()
 driver.implicitly_wait(5)
