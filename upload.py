@@ -8,6 +8,7 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
 file_path = "C:\\Users\\Khan Gadget\\Desktop\\download.xlsx"
+fruit_name = "Apple"
 # chrome driver service
 driver = webdriver.Chrome()
 driver.implicitly_wait(5)
@@ -25,3 +26,8 @@ toast_locator = (By.CSS_SELECTOR, ".Toastify__toast-body div:nth-child(2)")
 wait.until(expected_conditions.visibility_of_element_located(toast_locator))
 
 print(driver.find_element(*toast_locator).text)
+
+priceColumn = driver.find_element(By.XPATH, "//div[text()='Price']").get_attribute("data-column-id")
+
+actual_price = driver.find_element(By.XPATH, "//div[text()='"+fruit_name+"']/parent::div/parent::div/div[@id='cell-"+priceColumn+"-undefined']").text
+print(actual_price)
