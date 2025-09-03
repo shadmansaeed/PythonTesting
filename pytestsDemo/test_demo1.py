@@ -6,7 +6,15 @@
 # (py.test -k Creditcard -v -s) --run testcase with selected test
 # -k stands for method names execution,  -s logs in output,  -v stands for more info metadata
 # you can run specific file with py.test <filename>
+#C:\Users\Khan Gadget\PycharmProjects\PythonTesting\pytestsDemo
+# (you can mark(tag) tests @pytest.mark.smoke and then run with -m) example: py.test -v -s
+#  you can skip test with @pytest.mark.skip
+import pytest
 
+
+@pytest.mark.smoke  #for marking
+
+@pytest.mark.skip
 
 def test_firstProgram():
     print("Hello")
