@@ -9,6 +9,9 @@
 #C:\Users\Khan Gadget\PycharmProjects\PythonTesting\pytestsDemo
 # (you can mark(tag) tests @pytest.mark.smoke and then run with -m) example: py.test -v -s
 #  you can skip test with @pytest.mark.skip
+# fixtures are used for setup and teardown methods for test cases-conftest file to generalize
+# fixtures and make it available to all test cases
+
 import pytest
 
 

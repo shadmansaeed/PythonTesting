@@ -1,11 +1,7 @@
-import pytest
 
 
-@pytest.fixture()
-def setup():
-    print("I will be executing first")
-    yield
-    print("I will execute last")
+class TestExample:
+    
 
 def test_fixtureDemo(setup):
     print("I will execute steps in fixtureDemo method")
