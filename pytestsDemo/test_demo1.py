@@ -11,6 +11,8 @@
 #  you can skip test with @pytest.mark.skip
 # fixtures are used for setup and teardown methods for test cases-conftest file to generalize
 # fixtures and make it available to all test cases
+# data driven and parameterization can be done with return statements in tuple format
+# when you define fixture scope to class only, it will run once before class is initiated abd at the end
 
 import pytest
 
@@ -25,4 +27,7 @@ def test_firstProgram():
 
 def test_secondGreetCreditcard():
     print("Good morning")
+
+def test_crossBrowser(crossBrowser):
+    print(crossBrowser)
 
