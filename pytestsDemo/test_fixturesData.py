@@ -1,6 +1,6 @@
 import pytest
 
-from pytestsDemo.conftest import dataLoad
+from pytestsDemo.conftest_test import dataLoad
 
 
 @pytest.mark.usefixtures("dataLoad")
