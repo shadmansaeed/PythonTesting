@@ -2,11 +2,14 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage:
-    def __init__(self):
-        username_input = (By.ID, "username")
-
+    def __init__(self, driver):
+        self.driver = driver
+        self.username_input = (By.ID, "username")
+        self.password = (By.NAME, "password")
+        self.sign_button = (By.ID, "signInBtn")
 
     def login(self):
-        driver.find_element(By.ID, "username").send_keys("rahulshettyacademy")
-        driver.find_element(By.NAME, "password").send_keys("learning")
-        driver.find_element(By.ID, "signInBtn").click()
+
+        self.driver.find_element(*self.username_input).send_keys("rahulshettyacademy")
+        self.driver.find_element(*self.password).send_keys("learning")
+        self.driver.find_element(*self.sign_button).click()

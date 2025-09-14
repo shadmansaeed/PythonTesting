@@ -6,30 +6,25 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
+from pageObjects.shop import ShopPage
+from pageObjects.login import LoginPage
+
 
 def test_e2e(browserInstance):
     driver = browserInstance
 
     driver.get("https://rahulshettyacademy.com/loginpagePractise/")
-    driver.find_element(By.ID, "username").send_keys("rahulshettyacademy")
-    driver.find_element(By.NAME,"password").send_keys("learning")
-    driver.find_element(By.ID, "signInBtn").click()
+
+    loginPage = LoginPage(driver)
+    loginPage.login()
+
+    shop_page = ShopPage(driver)
+    shop_page.add_product_to_cart("Blackberry")
+    shop_page.goToCart()
+
 
     # //a[contains(@href,'shop)]'     a[href*='shop']
 
-    driver.find_element(By.CSS_SELECTOR, "a[href*='shop']").click()
-
-    products = driver.find_elements(By.XPATH, "//div[@class='card h-100']")
-
-    for product in products:
-
-        productName = product.find_element(By.XPATH, "div/h4/a").text
-
-        if productName == "Blackberry":
-            product.find_element(By.XPATH, "div/button").click()
-
-    driver.find_element(By.CSS_SELECTOR, "a[class*='btn-primary']").click()
-    # checkout
     driver.find_element(By.XPATH, "//button[@class='btn btn-success']").click()
 
     driver.find_element(By.ID, "country").send_keys('ind')
