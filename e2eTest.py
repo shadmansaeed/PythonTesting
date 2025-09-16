@@ -32,10 +32,11 @@ driver.find_element(By.ID, "country").send_keys('ind')
 
 #explicit wait
 
-wait = WebDriverWait(driver, 10)
+wait = WebDriverWait(driver, 20)
 wait.until(expected_conditions.presence_of_element_located((By.LINK_TEXT, "India")))
 driver.find_element(By.LINK_TEXT, "India").click()
 
+time.sleep(4)
 # click on checkbox
 driver.find_element(By.XPATH, "//div[@class='checkbox checkbox-primary']").click()
 

@@ -16,7 +16,7 @@ def test_e2e(browserInstance):
     driver.get("https://rahulshettyacademy.com/loginpagePractise/")
 
     loginPage = LoginPage(driver)
-    shop_page = loginPage.login()
+    shop_page = loginPage.login("rahulshettyacademy", "learning")
 
     shop_page = ShopPage(driver)
     shop_page.add_product_to_cart("Blackberry")
