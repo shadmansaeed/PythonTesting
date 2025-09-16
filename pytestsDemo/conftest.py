@@ -23,9 +23,11 @@ def browserInstance(request):
         driver.implicitly_wait(10)
     elif browser_name == "firefox":
         driver = webdriver.Firefox(service=service_obj)
+
     # driver = webdriver.Chrome()
-        driver.implicitly_wait(10)
-        driver.maximize_window()
+    driver.implicitly_wait(10)
+    driver.maximize_window()
+    driver.get("https://rahulshettyacademy.com/loginpagePractise/")
     yield driver  # Before test function execution
     driver.close()  # post your test function execution
 
