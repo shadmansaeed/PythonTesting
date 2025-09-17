@@ -17,7 +17,7 @@
 import pytest
 
 
-@pytest.mark.smoke  #for marking
+#@pytest.mark.smoke  #for marking
 
 @pytest.mark.skip
 
