@@ -39,3 +39,6 @@ class Checkout_Confirmation:
         successText = self.driver.find_element(*self.success_message).text
         # To check message
         assert "Success! Thank you!" in successText
+
+    def getTitle(self):
+        return self.driver.title

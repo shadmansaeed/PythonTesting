@@ -27,3 +27,6 @@ class ShopPage:
         self.driver.find_element(*self.checkout_button).click()
         checkout_confirmation = Checkout_Confirmation(self.driver)
         return Checkout_Confirmation(self.driver)  # self , driver pore deya hoise
+
+    def getTitle(self):
+        return self.driver.title

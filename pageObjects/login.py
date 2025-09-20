@@ -17,3 +17,6 @@ class LoginPage:
         self.driver.find_element(*self.sign_button).click()
         shop_page = ShopPage(self.driver)
         return
+
+    def getTitle(self):
+        return self.driver.title
