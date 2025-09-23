@@ -6,3 +6,4 @@ class BrowserUtils:
 
     def getTitle(self):
         return self.driver.title
+

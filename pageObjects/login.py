@@ -1,9 +1,10 @@
 from selenium.webdriver.common.by import By
 
 from pageObjects.shop import ShopPage
+from utils.browserutils import BrowserUtils
 
 
-class LoginPage:
+class LoginPage(BrowserUtils):
     def __init__(self, driver):
         self.driver = driver
         self.username_input = (By.ID, "username")
