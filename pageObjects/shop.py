@@ -1,10 +1,12 @@
 from selenium.webdriver.common.by import By
 
 from pageObjects.checkout_confirmation import Checkout_Confirmation
+from utils.browserutils import BrowserUtils
 
 
-class ShopPage:
+class ShopPage(BrowserUtils):
     def __init__(self, driver):
+        super().__init__(driver)
         self.driver = driver
         self.shop_link = (By.CSS_SELECTOR, "a[href*='shop']")
         self.product_cards = (By.XPATH, "//div[@class='card h-100']")
@@ -28,5 +30,5 @@ class ShopPage:
         checkout_confirmation = Checkout_Confirmation(self.driver)
         return Checkout_Confirmation(self.driver)  # self , driver pore deya hoise
 
-    def getTitle(self):
-        return self.driver.title
+    # def getTitle(self):
+        # return self.driver.title

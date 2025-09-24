@@ -27,10 +27,13 @@ def test_e2e(browserInstance, test_list_item):  # json
     # this line is in conftest "driver.get("https://rahulshettyacademy.com/loginpagePractise/")"
 
     loginPage = LoginPage(driver)
+    print(loginPage.getTitle())
     shop_page = loginPage.login(test_list_item["userEmail"], test_list_item["userPassword"])
 
     shop_page = ShopPage(driver)
     shop_page.add_product_to_cart(test_list_item["productName"])  # json
+    print(shop_page.getTitle())
+
     checkout_confirmation = shop_page.goToCart()
     checkout_confirmation.checkout()
     checkout_confirmation.enter_delivery_address("ind")

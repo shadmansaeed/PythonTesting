@@ -6,6 +6,7 @@ from utils.browserutils import BrowserUtils
 
 class LoginPage(BrowserUtils):
     def __init__(self, driver):
+        super().__init__(driver)  # parent class er jonno neya hoise
         self.driver = driver
         self.username_input = (By.ID, "username")
         self.password = (By.NAME, "password")
